@@ -1,0 +1,21 @@
+<?php
+
+namespace Twitter\Search;
+/**
+ *  Responsible for perform the search via Twittet Search API.
+ */
+class Search extends \Twitter\Base
+{
+
+    public function search($value)
+    {
+        try{
+            $url = "/search/tweets.json";
+            $response = $this->callTwitter("get",$url,$value);
+            return $response;
+        } catch (RequestException $e) {
+            $response = $this->StatusCodeHandling($e);
+            return $response;
+        }
+    }
+}
