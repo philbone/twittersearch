@@ -1,9 +1,10 @@
 <?php
 
 namespace Twitter;
+
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Exception\RequestException;
 
 /**
 *  Responsible for the generation of access tokens for Twitter API and API related requests.
@@ -20,10 +21,10 @@ class Base
 
     public function __construct()
     {
-        $this->client = new \GuzzleHttp\Client();
+        $this->client = new Client();
     }
 
-    public function setToken($token,$secret)
+    public function setToken($token, $secret)
     {
         $this->token = $token;
         $this->tokensecret = $secret;
@@ -47,7 +48,8 @@ class Base
             return $response;
         }
     }
-    protected function callTwitterAPI($method,$request,$post = [])
+
+    protected function callTwitterAPI($method, $request, $post = [])
     {
         try{
             $this->prepareAccessToken();
@@ -60,6 +62,7 @@ class Base
             return $response;
         }
     }
+
     protected function statusCodeHandling($e)
     {
         $response = array("statuscode" => $e->getResponse()->getStatusCode(),
