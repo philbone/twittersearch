@@ -47,7 +47,7 @@ class Base
             return $response;
         }
     }
-    protected function callTwitteAPIr($method,$request,$post = [])
+    protected function callTwitterAPI($method,$request,$post = [])
     {
         try{
             $this->prepareAccessToken();
