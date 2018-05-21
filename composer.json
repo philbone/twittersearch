@@ -1,10 +1,22 @@
 {
+    "name": "philbone/twittersearch", 
+    "description": "A package for Twitter search API.", 
+    "keywords": ["twitter search", "search"], 
+    "type": "package", 
     "require": {
         "guzzlehttp/guzzle": "^6.2"
     },
+    "license": "MIT",
+    "authors": [{ 
+        "name": "Phil Bone", 
+        "email": "philbone@focused.cl"
+    }],
     "autoload": {
         "psr-4": {
-            "Twitter\\" : "Twitter/"
+            "Twitter\\": "Twitter/"
         }
-    }
+    },
+    "version": "1.0.0", 
+    "minimum-stability": "dev"
+
 }
