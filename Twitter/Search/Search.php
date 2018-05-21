@@ -14,7 +14,7 @@ class Search extends Base
     {
         try{
             $url = "/search/tweets.json";
-            $response = $this->callTwitterAPI("get",$url,$value);
+            $response = $this->callTwitterAPI("get", $url, $value);
             return $response;
         } catch (RequestException $e) {
             $response = $this->StatusCodeHandling($e);
